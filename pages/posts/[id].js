@@ -34,7 +34,7 @@ export default function Post({ post }) {
       </Link>
     </Layout>
   );
-};
+}
 
 export async function getStaticPaths() {
   const paths = await getAllPostsIds();
@@ -46,7 +46,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const { post } = await getPostData(params.id);
+  const post = await getPostData(params.id);
   return {
     props: {
       post,
